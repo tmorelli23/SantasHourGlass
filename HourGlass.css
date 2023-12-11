@@ -1,0 +1,295 @@
+/*Title*/
+h1 {
+  text-align: center;
+  font-size: 80px;
+  margin-top: 0px;
+  border: 2px solid #06bc00; 
+  padding: 10px; 
+  border-radius: 50px; 
+  color: #333333; 
+  background-color: #f4f4f4; 
+}
+/*countdown*/
+p {
+  text-align: center;
+  font-size: 55px;
+  margin-top: 0px;
+  font-family: fantasy;
+  color:#00be19
+}
+
+body { 
+  background:url("red.jpeg") repeat fixed center; 
+}
+
+.hourglass {
+  animation: flip 20s ease-in-out infinite;
+  border-bottom: solid 1vmin rgb(255, 0, 0); /* Red border color for the hourglass */
+  border-top: solid 1vmin rgb(0, 183, 21); /* Green border color for the hourglass */
+  left: 50%;
+  margin-left: -6vmin;
+  margin-top: -11vmin;
+  padding: 0 1vmin;
+  position: absolute;
+  top: 50%;
+}
+
+.hourglass .top,
+.hourglass .bottom {
+  background: linear-gradient(to bottom, #78c5d6, #459ba8); /* Blue color for the glass */
+  box-shadow: 0 0 1vmin 1vmin #bcd inset;
+  height: 10vmin;
+  overflow: hidden;
+  position: relative;
+  width: 10vmin;
+}
+
+.hourglass .top {
+  border-radius: 50%;
+}
+
+.hourglass .top:before {
+  animation: top 20s linear infinite;
+  background-color: rgb(245, 243, 243); /* White color for the dripping effect */
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 10vmin;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateY(50%);
+  width: 10vmin;
+}
+
+.hourglass .top:after {
+  animation: top-drip 20s linear infinite;
+  background-color: rgb(248, 244, 244); /* White color for the dripping effect */
+  content: "";
+  display: block;
+  height: 100%;
+  left: 45%;
+  position: absolute;
+  top: 0;
+  transform: translateY(100%);
+  width: 10%;
+}
+
+.hourglass .bottom {
+  border-radius: 50%;
+}
+
+.hourglass .bottom:before {
+  animation: bottom 20s linear infinite;
+  background-color: rgb(250, 248, 248); /* White color for the dripping effect */
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 10vmin;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateY(100%);
+  width: 10vmin;
+}
+
+.hourglass .bottom:after {
+  animation: bottom-drip 20s linear infinite;
+  background-color: rgb(245, 241, 241); /*White color for hourglass snow*/
+  content: "";
+  display: block;
+  height: 100%;
+  left: 45%;
+  position: absolute;
+  top: 0;
+  width: 10%;
+}
+
+@keyframes flip {
+  0%, 45% {
+    transform: rotate(0);
+  }
+  50%, 95% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bottom {
+  0% {
+    transform: translateY(100%);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  51% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes top {
+  0% {
+    transform: translateY(50%);
+  }
+  50% {
+    transform: translateY(100%);
+  }
+  51% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes bottom-drip {
+  0% {
+    left: 45%;
+    transform: translateY(-100%);
+    width: 10%;
+  }
+  5% {
+    transform: translateY(0);
+  }
+  45%, 100% {
+    left: 50%;
+    transform: translateY(0);
+    width: 0;
+  }
+}
+
+@keyframes top-drip {
+  0%, 50% {
+    left: 45%;
+    transform: translateY(100%);
+    width: 10%;
+  }
+  55% {
+    left: 45%;
+    transform: translateY(0);
+    width: 10%;
+  }
+  100% {
+    left: 50%;
+    transform: translateY(0);
+    width: 0;
+  }
+
+}
+/* Snowflakes */
+.snowflake,
+.snowflake .inner {
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+
+/* Snowflake animation */
+@keyframes snowflakes-fall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(110vh);
+    }
+}
+
+@keyframes snowflakes-shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(90px);
+    }
+}
+
+/* Individual snowflakes */
+.snowflake {
+    position: fixed;;
+    user-select: none;
+    cursor: default;
+    animation-name: snowflakes-back and forth;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+}
+
+.snowflake .inner {
+    animation-duration: 4s;
+    animation-name: snowflakes-fall;
+    animation-timing-function: linear;
+}
+
+/* Position and delays for each snowflake */
+
+.snowflake,
+.snowflake .inner{animation-iteration-count:infinite;animation-play-state:running}
+
+@keyframes snowflakes-fall{0%{transform:translateY(0)}100%
+{transform:translateY(110vh)}}
+
+@keyframes snowflakes-shake{0%,100%{transform:translateX(0)}50%
+{transform:translateX(80px)}}
+
+.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;user-select:none;cursor:default;animation-name:snowflakes-shake;
+  animation-duration:3s;animation-timing-function:ease-in-out}
+  
+.snowflake .inner{animation-duration:10s;animation-name:snowflakes-fall;
+    animation-timing-function:linear}
+    
+.snowflake:nth-of-type(0){left:1%;animation-delay:0s}
+
+.snowflake:nth-of-type(0) .inner{animation-delay:0s}
+
+.snowflake:first-of-type{left:10%;animation-delay:1s}
+
+.snowflake:first-of-type .inner,.snowflake:nth-of-type(8) 
+
+.inner{animation-delay:1s}.snowflake:nth-of-type(2){left:20%;animation-delay:.5s}
+
+.snowflake:nth-of-type(2) .inner,.snowflake:nth-of-type(6) 
+
+.inner{animation-delay:6s}.snowflake:nth-of-type(3){left:30%;animation-delay:2s}
+
+.snowflake:nth-of-type(11) .inner,
+
+.snowflake:nth-of-type(3) .inner{animation-delay:4s}
+
+.snowflake:nth-of-type(4){left:40%;animation-delay:2s}
+
+.snowflake:nth-of-type(10) .inner,.snowflake:nth-of-type(4) 
+
+.inner{animation-delay:2s}.snowflake:nth-of-type(5){left:50%;animation-delay:3s}
+
+.snowflake:nth-of-type(5) .inner{animation-delay:8s}
+
+.snowflake:nth-of-type(6){left:60%;animation-delay:2s}
+
+.snowflake:nth-of-type(7){left:70%;animation-delay:1s}
+
+.snowflake:nth-of-type(7) .inner{animation-delay:2.5s}
+
+.snowflake:nth-of-type(8){left:80%;animation-delay:0s}
+
+.snowflake:nth-of-type(9){left:90%;animation-delay:1.5s}
+
+.snowflake:nth-of-type(9) .inner{animation-delay:3s}
+
+.snowflake:nth-of-type(10){left:25%;animation-delay:0s}
+
+.snowflake:nth-of-type(11){left:65%;animation-delay:2.5s}
+
+.snowflake:nth-of-type(12) { left: 15%; animation-delay: 1.2s; }
+
+.snowflake:nth-of-type(13) { left: 75%; animation-delay: 0.8s; }
+
+.snowflake:nth-of-type(14) { left: 45%; animation-delay: 2s; }
+
+.snowflake:nth-of-type(15) { left: 35%; animation-delay: 2.7s; }
+
+.snowflake:nth-of-type(16) { left: 55%; animation-delay: 1.5s; }
+
+.snowflake:nth-of-type(17) { left: 85%; animation-delay: 1s; }

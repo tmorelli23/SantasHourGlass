@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--Author: Tony Morelli
+     -->
+
+     <head>
+     <meta charset="UTF-8">
+     <title>Santa's HourGlass</title>
+     <link rel="stylesheet" href="HourGlass.css">
+     <style>
+      /* customizable snowflake styling */
+      .snowflake {
+        color: #fff;
+        font-size: 1em;
+        font-family: Arial, sans-serif;
+        text-shadow: 0 0 5px #000;
+      }
+      </style>
+      <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">
+          <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+          <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+          <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+          <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+          <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+          <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+          <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+          <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+          <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+          <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+          <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+          <div class="inner">❅</div>
+        </div>
+     </head>      
+     </html>
+     
+     <body>
+     <div class="hourglass">
+         <div class="top"></div>
+         <div class="bottom"></div>
+     </div>
+     
+         <h1>Santa's HourGlass</h1>
+     
+         <p id="demo"></p>
+     
+         <script>
+             // Set the end date for the timer
+             var countDownDate = new Date("Dec 25, 2023 0:00:00").getTime();
+     
+             // Update the count down every 1 second
+             var x = setInterval(function () {
+     
+                 // Current date and time
+                 var now = new Date().getTime();
+     
+                 // Distance to countdown date
+                 var distance = countDownDate - now;
+     
+                 // Time for countdown
+                 var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                 var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                 var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+     
+                 document.getElementById("demo").innerHTML = days + "d " + hours + "h " +
+                     minutes + "m " + seconds + "s ";
+     
+                 // When countdown ends say Merry Christmas
+                 if (distance < 0) {
+                     clearInterval(x);
+                     document.getElementById("demo").innerHTML = "🎅🎄Merry Christmas!🎅🎄";
+                 }
+             }, 1000);
+             
+             
+         </script>
+     </body>
+     
+     </html>
